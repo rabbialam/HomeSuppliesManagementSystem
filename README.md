@@ -17,6 +17,7 @@ Project setup.</br>
   7. For running the project, open terminal or cmd and go to the project root folder. </br>
   8. run "./gradlew bootrun" command. It will start the server at 9080 port. </br>
   9. For building the jar file run "./gradlew clean build". It will build the jar file.</br>
+10. Start intilij , go to Settings>Plugin. Then search for "lombok" plugin and add it.
   
   
  
