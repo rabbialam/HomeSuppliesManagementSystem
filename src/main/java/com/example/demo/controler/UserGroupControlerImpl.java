@@ -14,7 +14,8 @@ import java.util.List;
 @Service
 public class UserGroupControlerImpl implements UserGroupControler{
 
-
+//	Class log;
+	
     @Autowired
     private UserGroupRepository userRepository;
 
@@ -32,7 +33,8 @@ public class UserGroupControlerImpl implements UserGroupControler{
         userGroupEntity.setGroupName(userGroupDto.getGroupName());
 
         userRepository.save(userGroupEntity);
-        log.debug("group named {} is created",userGroupDto.getGroupName());
+        
+		//log.debug("group named {} is created",userGroupDto.getGroupName());
 
     }
 }
