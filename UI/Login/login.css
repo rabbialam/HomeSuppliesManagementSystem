@@ -1,0 +1,58 @@
+body {
+    background:url(../Images/backgroundImage.jpg) no-repeat;
+    background-size: 100%;
+    font-family: 'Roboto';
+}
+
+.login-div {
+    background-color: #ffcccc;
+    position: absolute;
+    top: 32%;
+    left: 37%;
+    padding: 3%;
+    border-radius: 20px;
+    font-family: 'Roboto';
+}
+
+.input-area {
+    width: 300px;
+    height: 50px;
+    border: none;
+    font-size: 14pt;
+    float: left;
+    color: #262626;
+    padding-left: 45px;
+    border-radius: 5px;
+    font-family: 'Roboto';
+}
+
+.signup-area {
+    font-size: 11pt;
+    color: #262626;
+    padding-left: 155px;
+    font-family: 'Roboto';
+}
+
+.table-row {
+    padding : 8%;
+}
+
+.table-column {
+    padding-bottom : 10px;
+}
+
+.login-button {
+  background: #2b303b;
+  color:#ffcccc;
+  font-size: 15pt;
+  width: 345px;
+  padding-left: 23px;
+  font-family: 'Roboto';
+}
+
+.error-div {
+    background: #2b303b;
+    opacity: 0.5;
+    color:#ffcccc;
+    padding-top: 23px;
+}

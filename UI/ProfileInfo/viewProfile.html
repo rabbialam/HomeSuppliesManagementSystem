@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <link rel="stylesheet" href="profile.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="profile.controller.js"></script>
+        <title> View Profile </title>
+    </head>
+    <body ng-app="listApp">
+            <header>
+                    <h1 class="header-area">VIEW PROFILE
+                            <button class="logout-button" id="logout-button">HOME</button>
+                            <button class="logout-button" id="logout-button">EDIT</button>
+                     </h1>
+                </header>
+        <form>
+                <table class="login-div" ng-controller="loginController">
+                        <tr class="table-row">
+                            <td class="table-column"> 
+                                    <i class="fa fa-user"></i>
+                            </td>
+                                <td class="table-column">
+                                    <div ng-show="isInvalidLogin" class="error-div input-area">Aditi</div>
+                                </td>
+                            </tr>
+                            <tr class="table-row">
+                                    <td class="table-column">
+                                            <i class="fa fa-envelope"></i>
+                                    </td>
+                                    <td class="table-column">
+                                        <div ng-show="isInvalidLogin" class="error-div input-area">aditir@uncc.edu</div>
+                                    </td>
+                                </tr>
+                        <!-- <tr class="table-row">
+                            <td class="table-column">
+                                <input type="text" placeholder="...What did you purchase" class="input-area" ng-model="username" required>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                                <td class="table-column">
+                                    <input type="password" placeholder="...How much did it cost" class="input-area" ng-model="password" required>
+                                </td>
+                            </tr>
+                        <tr class="table-row">
+                                <td class="table-column">
+                                    <button ng-click= "validateUser()" class="login-button input-area">SPLIT</button>
+                                </td>
+                            </tr> -->
+                    </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="balance.css">
+        <link rel="stylesheet" href="../CreateItem/createItem.css">
+        <link rel="stylesheet" href="../Login/login.css">
+        <script src="balance.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="balance.controller.js"></script>
+        <title>Balance List Page</title>
+    </head>
+    <body  ng-app="myApp" ng-controller="ItemsController" onload="f()">
+            <!-- <body  ng-app="" onload="f()"> -->
+        <header>
+            <h1 class="header-area">GROUP 1 : Balance
+                    <button class="logout-button" id="logout-button">HOME</button>
+                    <button class="logout-button" id="logout-button">SETTLED</button>
+                    
+            </h1>
+        </header>
+        <div class="listTable_div">
+        <table border="1" class="item-table">
+                <!-- <tr class="item-table-row" ng-repeat="item in items" id="{{item.id}}"> -->
+                        <tr class="item-table-row-header">
+                        <th class="item-table-column-mark item-table-column-header">
+                                MARK
+                        </th>
+                        <th class="item-table-column-header">
+                                USER
+                        </th>
+                        <th class="item-table-column-header">
+                                YOU OWE THEM
+                        </th>
+                        <th class="item-table-column-header">
+                                THEY OWE YOU
+                        </th>
+                    </tr>
+            <!-- <tr class="item-table-row" ng-repeat="item in items" id="{{item.id}}"> -->
+            <tr class="item-table-row">
+                    <td class="item-table-column-mark item-table-column">
+                        <input type="checkbox">
+                    </td>
+                    <td class="item-table-column">
+                            <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">Tejaswini</a>
+                    </td>
+                    <td class="item-table-column">
+                            <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">$ 50</a>
+                    </td>
+                <td class="item-table-column">
+                        <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">---</a>
+                </td>
+                
+            </tr>
+            <tr class="item-table-row">
+                    <td class="item-table-column-mark item-table-column">
+                        <input type="checkbox">
+                    </td>
+                    <td class="item-table-column">
+                            <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">Sajid</a>
+                    </td>
+                    <td class="item-table-column">
+                            <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">---</a>
+                    </td>
+                <td class="item-table-column">
+                        <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">$ 25</a>
+                </td>
+                
+            </tr>
+            <tr class="item-table-row">
+                    <td class="item-table-column-mark item-table-column">
+                        <input type="checkbox">
+                    </td>
+                    <td class="item-table-column">
+                            <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">Rabbi</a>
+                    </td>
+                    <td class="item-table-column">
+                            <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">$25</a>
+                    </td>
+                <td class="item-table-column">
+                        <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">---</a>
+                </td>
+                
+            </tr>
+        </table>
+        </div>
+    </body>
+</html>

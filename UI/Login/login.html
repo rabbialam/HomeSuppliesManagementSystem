@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <link rel="stylesheet" href="login.css">
+        <script src="login.controller.js"></script>
+        <title> ToDoList </title>
+    </head>
+    <body ng-app="listApp">
+        <form>
+                <table class="login-div" ng-controller="loginController">
+                        <tr class="table-row">
+                                <td class="table-column">
+                                    <div ng-show="isInvalidLogin" class="error-div input-area">Username or password is incorrect</div>
+                                </td>
+                            </tr>
+                        <tr class="table-row">
+                            <td class="table-column">
+                                <input type="text" placeholder="Username..." class="input-area" ng-model="username" required>
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                                <td class="table-column">
+                                    <input type="password" placeholder="Password..." class="input-area" ng-model="password" required>
+                                </td>
+                            </tr>
+                        <tr class="table-row">
+                                <td class="table-column">
+                                    <button ng-click= "validateUser()" class="login-button input-area">LOGIN</button>
+                                </td>
+                            </tr>
+                        <tr class="table-row">
+                            <td class="table-column">
+                                <a href="" class="signup-area">Sign Up</a>
+                            </td>
+                        </tr>
+                    </table>
+        </form>
+    </body>
+</html>

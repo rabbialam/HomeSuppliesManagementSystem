@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="userGroupslist.css">
+        <link rel="stylesheet" href="../CreateItem/createItem.css">
+        <link rel="stylesheet" href="../Login/login.css">
+        <script src="userGroupslist.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="userGroupslist.controller.js"></script>
+        <title>User Groups Pages</title>
+    </head>
+    <body  ng-app="myApp" ng-controller="ItemsController" onload="f()">
+            <!-- <body  ng-app="" onload="f()"> -->
+        <header>
+            <h1 class="header-area">GROUPS
+                    <button class="logout-button" id="logout-button">HOME</button>
+                    <!-- <button class="logout-button" id="logout-button">CREATE GROUP</button> -->
+                    <!-- <button id="myBtn" class="add-button btn btn-success btn-add" type="button" ng-click="setItemNameEmpty()">+</button> -->
+            </h1>
+        </header>
+        <!-- MODAL -->
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <form>
+          </div>
+          <div class="modal-body">
+            <table>
+                <tr class="table-row">
+                    <td class="table-column">
+                            <input type="input" placeholder="...Search User by Email" class="modal-input"   ng-model="newItemName" required="required">
+                    </td>
+                </tr>
+                <!-- <tr class="table-row">
+                        <td class="table-column">
+                            <input type="input" placeholder="...Assign To" class="modal-input"  ng-show="isUpdateModal" ng-click="updateItem()" required="required">
+                        </td>
+                    </tr> -->
+                <!-- <tr class="table-row">
+                    <td class="table-column">
+                        <input type="input" placeholder="...How much did you buy?" class="modal-input"  ng-show="isUpdateModal" ng-click="updateItem()" required="required">
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-column">
+                        <input type="input" placeholder="...For how many people did you buy?" class="modal-input"  ng-show="isUpdateModal" ng-click="updateItem()" required="required">
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-column">
+                        <input type="input" placeholder="...Buying date" class="modal-input-disabled"  ng-show="isUpdateModal" ng-click="updateItem()" required="required" ng-disabled="true">
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td class="table-column">
+                        <input type="input" placeholder="...End Date" class="modal-input-disabled"  ng-show="isUpdateModal" ng-click="updateItem()" required="required" ng-disabled="true">
+                    </td>
+                </tr> -->
+            </table>
+          
+          </div>
+          <div class="modal-footer">
+                <input type="submit" value="ADD" class="modal-button" ng-click="addItem()" id="save-button" ng-show="!isUpdateModal">
+                <input type="submit" value="ASSIGN" class="modal-button" id="update-button" ng-show="isUpdateModal" ng-click="updateItem()"></button>
+                <input type="reset" value="CANCEL" class="modal-button">
+          </div>
+        </div>
+    </form>
+      </div> 
+       
+        <!-- MODAL  END -->
+
+
+                <!-- MODAL -->
+        <!-- The Modal -->
+        <div id="myModal2" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <span class="close">&times;</span>
+                  </div>
+                  <div class="modal-body">
+                    <table>
+                        <tr class="table-row">
+                            <td class="table-column">
+                                    MARK ITEM
+                            </td>
+                        </tr>
+                        <tr class="table-row">
+                            <td class="table-column">
+                                ASSIGN ITEM
+                            </td>
+                    </table>
+                  
+                  </div>
+                </div>
+              </div>
+               
+                <!-- MODAL  END -->
+
+
+
+        <!-- <table class="item-table">
+                <tr class="item-table-row" ng-repeat="item in items" id="{{item.id}}">
+                    <td class="item-table-column">
+                            <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">{{item.title}}</a>
+                    </td>
+                    <td class="item-table-column">
+                            <button id="myRemoveBtn" class="delete-item remove-button btn btn-danger btn-remove" type="button" ng-click="deleteItem($index)")>-</button>
+                    </td>
+                </tr>
+            </table> -->
+            <table class="item-table">
+                    <tr class="item-table-row">
+                        <td class="item-table-column">
+                                <div class="dropdown">
+                                <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">Group_1</a>
+                                <div class="dropdown-content">
+                                                <a href="#">Split Bills</a>
+                                                <a href="#">Check Balance</a>
+                                                <a href="#">Group Info</a>
+                                      </div>
+                                    </div>
+                        </td>
+                        <td class="item-table-column">
+                                <!-- <button id="myRemoveBtn" class="delete-item remove-button btn btn-danger btn-remove" type="button" ng-click="deleteItem($index)")>-</button> -->
+                        </td>
+                    </tr>
+                    <tr class="item-table-row">
+                            <td class="item-table-column">
+                                    <div class="dropdown">
+                                            <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">Group_2</a>
+                                            <div class="dropdown-content">
+                                                        <a href="#">Split Bills</a>
+                                                    <a href="#">Check Balance</a>
+                                                    <a href="#">Group Info</a>
+                                                  </div>
+                                                </div>
+                            </td>
+                            <td class="item-table-column">
+                                    <!-- <button id="myRemoveBtn" class="delete-item remove-button btn btn-danger btn-remove" type="button" ng-click="deleteItem($index)")>-</button> -->
+                            </td>
+                        </tr>
+                        <tr class="item-table-row">
+                                <td class="item-table-column">
+                                        <div class="dropdown">
+                                                <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">Group_3</a>
+                                                <div class="dropdown-content">
+                                                                <a href="#">Split Bills</a>
+                                                                <a href="#">Check Balance</a>
+                                                                <a href="#">Group Info</a>
+                                                      </div>
+                                                    </div>
+                                </td>
+                                <td class="item-table-column">
+                                        <!-- <button id="myRemoveBtn" class="delete-item remove-button btn btn-danger btn-remove" type="button" ng-click="deleteItem($index)")>-</button> -->
+                                </td>
+                            </tr>
+                            <tr class="item-table-row">
+                                    <td class="item-table-column">
+                                            <div class="dropdown">
+                                                    <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">Group_4</a>
+                                                    <div class="dropdown-content">
+                                                                <a href="#">Split Bills</a>
+                                                                <a href="#">Check Balance</a>
+                                                                <a href="#">Group Info</a>
+                                                          </div>
+                                                        </div>
+                                    </td>
+                                    <td class="item-table-column">
+                                            <!-- <button id="myRemoveBtn" class="delete-item remove-button btn btn-danger btn-remove" type="button" ng-click="deleteItem($index)")>-</button> -->
+                                    </td>
+                                </tr>
+                                <tr class="item-table-row">
+                                        <td class="item-table-column">
+                                                <div class="dropdown">
+                                                        <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">Group_5</a>
+                                                        <div class="dropdown-content">
+                                                                        <a href="#">Split Bills</a>
+                                                                        <a href="#">Check Balance</a>
+                                                                        <a href="#">Group Info</a>
+                                                              </div>
+                                                            </div>
+                                        </td>
+                                        <td class="item-table-column">
+                                                <!-- <button id="myRemoveBtn" class="delete-item remove-button btn btn-danger btn-remove" type="button" ng-click="deleteItem($index)")>-</button> -->
+                                        </td>
+                                    </tr>
+                                    <tr class="item-table-row">
+                                            <td class="item-table-column">
+                                                    <div class="dropdown">
+                                                            <a href="#" id="itemLink" ng-click="openItem($index)" class="listItem">Group_6</a>
+                                                            <div class="dropdown-content">
+                                                                        <a href="#">Split Bills</a>
+                                                                        <a href="#">Check Balance</a>
+                                                                        <a href="#">Group Info</a>
+                                                                  </div>
+                                                                </div>
+                                            </td>
+                                            <td class="item-table-column">
+                                                    <!-- <button id="myRemoveBtn" class="delete-item remove-button btn btn-danger btn-remove" type="button" ng-click="deleteItem($index)")>-</button> -->
+                                            </td>
+                                        </tr>
+                </table>
+
+    </body>
+</html>
