@@ -1,14 +1,13 @@
 package com.example.demo.entity;
 
+import lombok.Data;
+
 import java.util.List;
+import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
+@Data
 @Entity
 public class User {
 	@Id
@@ -23,6 +22,9 @@ public class User {
 	
 	@OneToMany(mappedBy="user")
 	private List<ToDoListItem> toDoLists;
+
+	@ManyToMany
+	private Set<UserGroupEntity> userGroupEntitySet;
 
 	public Long getUserId() {
 		return userId;
