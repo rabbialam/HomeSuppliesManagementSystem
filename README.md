@@ -10,6 +10,7 @@ Project setup.</br>
   2. Download and install MySQL community server. While installing use the username: root and pass: root123456 (if You use 
   any other username and password you have to change it in application.properties file) </br>
   3. Download and install MySQL workbench. </br>
+  4. Download and configure Gradle. Run the command: "gradle wrapper"
   4. Connect to the database using mysql workbench and create a database called "demo_db" </br>
   5. Fetch the code from github. </br>
   6. For opening the project in intilij , install it and run intilij. Then go to File>open and browse to the project folder downloaded
