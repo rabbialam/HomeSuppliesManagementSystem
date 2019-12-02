@@ -20,5 +20,10 @@ Project setup.</br>
   9. For building the jar file run "./gradlew clean build". It will build the jar file.</br>
 10. Start intilij , go to Settings>Plugin. Then search for "lombok" plugin and add it.
   
-  
+
+Developed features:
+1. Enter Amount for Split
+2. Settle the balance
+3. Populate Shopping List
+4. Create or Edit Shopping List
  
