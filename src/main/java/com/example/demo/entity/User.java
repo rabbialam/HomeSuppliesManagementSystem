@@ -19,7 +19,10 @@ public class User {
 
 	@Column
 	private String password;
-	
+
+	@Column
+	private Double balance;
+
 	@OneToMany(mappedBy="user")
 	private List<ToDoListItem> toDoLists;
 
