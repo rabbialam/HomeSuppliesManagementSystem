@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface TransactionRepository extends JpaRepository<TransactionEntity,Long> {
 
-    List<TransactionEntity> findAllByGroup(UserGroupEntity userGroupEntity);
+    List<TransactionEntity> findAllByUserGroupEntity(UserGroupEntity userGroupEntity);
 }

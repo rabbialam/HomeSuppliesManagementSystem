@@ -14,8 +14,11 @@ public class TransactionEntity {
     @Column
     private Double amount;
 
-    @OneToOne
+    @ManyToOne
     private  UserGroupEntity userGroupEntity;
+
+    @ManyToOne
+    private User paidBy;
 
     @Column
     private String date;

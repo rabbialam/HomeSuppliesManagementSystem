@@ -27,7 +27,7 @@ public class EnterAmountForSplitController {
         log.debug("lenterAmount e dhukse");
 
 
-        splitAmountService.splitAmount(enterAmountDTO.getAmount(),enterAmountDTO.getGroupId());
+        splitAmountService.splitAmount(enterAmountDTO);
 
         statusMap.put(HttpStatus.OK, "Saved Item Successfully");
 

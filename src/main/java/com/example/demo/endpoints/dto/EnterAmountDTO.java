@@ -12,4 +12,7 @@ public class EnterAmountDTO {
     @NotNull
     private Long groupId;
 
+    @NotNull
+    private Long paidBy;
+
 }

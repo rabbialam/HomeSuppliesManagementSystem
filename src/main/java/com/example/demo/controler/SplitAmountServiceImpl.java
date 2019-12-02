@@ -1,9 +1,12 @@
 package com.example.demo.controler;
 
+import com.example.demo.endpoints.dto.EnterAmountDTO;
 import com.example.demo.entity.TransactionEntity;
+import com.example.demo.entity.User;
 import com.example.demo.entity.UserGroupEntity;
 import com.example.demo.repository.TransactionRepository;
 import com.example.demo.repository.UserGroupRepository;
+import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,15 +18,20 @@ public class SplitAmountServiceImpl implements SplitAmountService {
 
     @Autowired
     UserGroupRepository userGroupRepository;
-    @Override
-    public void splitAmount(Double amount, Long groupId) {
 
-        UserGroupEntity userGroupEntity = userGroupRepository.getOne(groupId);
+    @Autowired
+    UserRepository userRepository;
+    @Override
+    public void splitAmount(EnterAmountDTO enterAmountDTO) {
+
+        UserGroupEntity userGroupEntity = userGroupRepository.getOne(enterAmountDTO.getGroupId());
+        User user = userRepository.getOne(enterAmountDTO.getPaidBy());
 
         TransactionEntity transactionEntity = new TransactionEntity();
 
-        transactionEntity.setAmount(amount);
+        transactionEntity.setAmount(enterAmountDTO.getAmount());
         transactionEntity.setUserGroupEntity(userGroupEntity);
+        transactionEntity.setPaidBy(user);
         transactionEntity.setDate(System.currentTimeMillis()+"");
 
         transactionRepository.save(transactionEntity);
