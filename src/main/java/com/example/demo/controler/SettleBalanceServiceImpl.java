@@ -28,7 +28,7 @@ public class SettleBalanceServiceImpl implements SettleBalanceService{
 
         List<TransactionEntity> transactionEntityList = transactionRepository.findAllByUserGroupEntity(userGroupEntity);
 
-        
+
 
 
     }

@@ -1,5 +1,6 @@
-var app =angular.module('myApp',[]);
-app.controller('ItemsController',['$scope',function($scope){
+angular.module('app').controller('ItemsController',['$scope',function($scope){
+debugger;
+
     $scope.newItemName="";
     $scope.items=[];
     $scope.itemIndex=-1;

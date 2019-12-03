@@ -1,5 +1,6 @@
-var app =angular.module('listApp',[]);
-app.controller('loginController',['$scope',function($scope){
+
+angular.module('app').controller('loginController',['$scope',function($scope){
+debugger;
 $scope.username="";
 $scope.password="";
 $scope.isInvalidLogin=false;
@@ -12,7 +13,6 @@ $scope.systemUser=[{
     password: "shwetana"
 }];
 $scope.validateUser=function(){
-debugger;
 var keys=[];
 var usernames=[];
 for(var i=0;i<$scope.systemUser.length;i++){
@@ -41,7 +41,7 @@ for(var user in usernames){
         else {
             //goto next page
             $scope.isInvalidLogin = false;
-            location.href = "../List/list.html";
+            location.href = "#!/list";
         }
     }
     else {
