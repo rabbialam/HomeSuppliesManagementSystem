@@ -5,6 +5,7 @@ import com.example.demo.endpoints.dto.SettleBalanceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +21,7 @@ public class SettleBalanceEndpoint {
 
     @PostMapping
     @RequestMapping("/settleAmount")
-    Map<HttpStatus, String> settleAmount(SettleBalanceDTO settleBalanceDTO){
+    Map<HttpStatus, String> settleAmount(@RequestBody SettleBalanceDTO settleBalanceDTO){
         Map<HttpStatus, String> statusMap = new HashMap<>();
 
         settleBalanceService.settleBalanceFroGroup(settleBalanceDTO);

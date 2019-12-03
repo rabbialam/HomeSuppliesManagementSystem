@@ -23,4 +23,7 @@ public class TransactionEntity {
     @Column
     private String date;
 
+    @Column
+    long status;
+
 }

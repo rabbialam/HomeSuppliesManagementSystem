@@ -10,6 +10,8 @@ import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 public class SplitAmountServiceImpl implements SplitAmountService {
 
@@ -22,6 +24,7 @@ public class SplitAmountServiceImpl implements SplitAmountService {
     @Autowired
     UserRepository userRepository;
     @Override
+    @Transactional
     public void splitAmount(EnterAmountDTO enterAmountDTO) {
 
         UserGroupEntity userGroupEntity = userGroupRepository.getOne(enterAmountDTO.getGroupId());
@@ -33,8 +36,11 @@ public class SplitAmountServiceImpl implements SplitAmountService {
         transactionEntity.setUserGroupEntity(userGroupEntity);
         transactionEntity.setPaidBy(user);
         transactionEntity.setDate(System.currentTimeMillis()+"");
+        transactionEntity.setStatus(1); //1 for unsettled
+        user.setBalance(user.getBalance() + enterAmountDTO.getAmount());
 
         transactionRepository.save(transactionEntity);
+        userRepository.save(user);
 
     }
 }
