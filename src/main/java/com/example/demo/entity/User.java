@@ -26,9 +26,6 @@ public class User {
 	@OneToMany(mappedBy="user")
 	private List<ToDoListItem> toDoLists;
 
-	@ManyToMany
-	private Set<UserGroupEntity> userGroupEntitySet;
-
 	public Long getUserId() {
 		return userId;
 	}
