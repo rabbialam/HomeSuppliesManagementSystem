@@ -1,7 +1,9 @@
 var app =angular.module('listApp',[]);
-app.controller('loginController',['$scope',function($scope){
-$scope.username="";
-$scope.password="";
+app.controller('splitAmountController',['$scope','$http',function($scope,$http){
+var group = $http.get("http://localhost:9080/api/getUserGroup")
+console.log(group)
+$scope.groupId=1;
+$scope.paidBy=1;
 $scope.isInvalidLogin=false;
 $scope.systemUser=[{
     username: "aditiro",
@@ -12,44 +14,27 @@ $scope.systemUser=[{
     password: "shwetana"
 }];
 $scope.validateUser=function(){
-debugger;
-var keys=[];
-var usernames=[];
-for(var i=0;i<$scope.systemUser.length;i++){
-    //keys.push($scope.systemUser.key);
-    usernames.push($scope.systemUser[i].username);
-}
-var counter=-1;
-var userKey=-1;
-for(var user in usernames){
-    if($scope.username == usernames[user]){
-            userKey = counter+1;
-        break;
-    }
-    else{
-        counter++;
-    }
-}
-    if(userKey!=-1){
-        var password = $scope.systemUser[userKey].password;
-        if(password != $scope.password){
-            //error condition password
-            $scope.isInvalidLogin = true;
-            $scope.username="";
-            $scope.password="";
-        }
-        else {
-            //goto next page
-            $scope.isInvalidLogin = false;
-            location.href = "../List/list.html";
-        }
-    }
-    else {
-        //error condition for user 
-        $scope.isInvalidLogin = true;
-        $scope.username="";
-        $scope.password="";
-    }
+
+var amount = $scope.itemPrice;
+var obj = new Object();
+   obj.groupId = 1;
+   obj.amount  = amount;
+   obj.paidBy = 1;
+   var jsonString= JSON.stringify(obj);
+ $http({
+        url: "http://localhost:9080/api/enterAmount",
+        method: "POST",
+        headers: {'Content-Type':'application/json'},
+        data: jsonString
+    })
+    .then(function(response) {
+            // success
+          ;
+    },
+    function(response) { // optional
+            // failed
+            ;
+    });
 
 
 }
