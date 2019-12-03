@@ -4,7 +4,7 @@
             <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <link rel="stylesheet" href="splitAmount.css">
         <!-- <link rel="stylesheet" href="../List/list.css"> -->
-        <script src="splitAmount.controller.js"></script>
+        <script src="splitAmount.js"></script>
         <title> Split Amount </title>
     </head>
     <body ng-app="listApp">
@@ -15,20 +15,20 @@
                      </h1>
                 </header>
         <form>
-                <table class="login-div" ng-controller="loginController">
+                <table class="login-div" ng-controller="splitAmountController">
                         <tr class="table-row">
                                 <td class="table-column">
-                                    <div ng-show="isInvalidLogin" class="error-div input-area">GROUP 1</div>
+                                    <div class="error-div input-area">GROUP 1</div>
                                 </td>
                             </tr>
                         <tr class="table-row">
                             <td class="table-column">
-                                <input type="text" placeholder="...What did you purchase" class="input-area" ng-model="username" required>
+                                <input type="text" placeholder="...What did you purchase" class="input-area" ng-model="itemNAme" required>
                             </td>
                         </tr>
                         <tr class="table-row">
                                 <td class="table-column">
-                                    <input type="password" placeholder="...How much did it cost" class="input-area" ng-model="password" required>
+                                    <input type="text" placeholder="...How much did it cost" class="input-area" ng-model="itemPrice" required>
                                 </td>
                             </tr>
                         <tr class="table-row">
