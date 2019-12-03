@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.SystemException;
 import javax.transaction.Transactional;
 import java.util.*;
 
@@ -45,7 +46,7 @@ public class SettleBalanceServiceImpl implements SettleBalanceService{
             user.setBalance(centralFund - user.getBalance());
             userRepository.save(user);
         }
-        System.out.println("before sorted---->" +userGroupEntity.getUserList());
+        //System.out.println("before sorted---->" +userGroupEntity.getUserList());
 
         int numberUserGroupEntity = userGroupEntity.getUserList().size();
         List<User> sortedUserList = new ArrayList<User>(numberUserGroupEntity);
@@ -54,14 +55,26 @@ public class SettleBalanceServiceImpl implements SettleBalanceService{
 
         Collections.sort(sortedUserList, (first, second) -> (int) (first.getBalance() - second.getBalance()));
 
-        System.out.println("after sorted---->" +sortedUserList);
+        //System.out.println("after sorted---->" +sortedUserList);
 
+        int iteration = 0;
+        while(sortedUserList.get(0).getBalance()!= 0.0){
+            iteration = iteration + 1;
+            //System.out.println("iteration : " + iteration);
 
+            User secondUser = null;
+            for (User user : sortedUserList){
+                if(user.getBalance() > 0.0) {
+                    secondUser = user;
+                }
+            }
+            sortedUserList.get(0).setBalance(sortedUserList.get(0).getBalance() + secondUser.getBalance());
+            System.out.println(secondUser.getUserName()+ " will give "+ secondUser.getBalance() + " to "+ sortedUserList.get(0).getUserName());
+            secondUser.setBalance(0.0);
 
-
-
-
-
+            Collections.sort(sortedUserList, (first, second) -> (int) (first.getBalance() - second.getBalance()));
+            //System.out.println("after iteration---->" +sortedUserList);
+        }
 
     }
 }
