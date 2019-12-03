@@ -24,9 +24,7 @@ public class EnterAmountForSplitController {
     Map<HttpStatus, String> enterAmount(@RequestBody EnterAmountDTO enterAmountDTO){
         Map<HttpStatus, String> statusMap = new HashMap<>();
 
-        log.debug("lenterAmount e dhukse");
-
-
+        //log.debug("lenterAmount e dhukse");
         splitAmountService.splitAmount(enterAmountDTO);
 
         statusMap.put(HttpStatus.OK, "Saved Item Successfully");

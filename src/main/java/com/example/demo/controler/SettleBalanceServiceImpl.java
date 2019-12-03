@@ -5,12 +5,14 @@ import com.example.demo.entity.TransactionEntity;
 import com.example.demo.entity.UserGroupEntity;
 import com.example.demo.repository.TransactionRepository;
 import com.example.demo.repository.UserGroupRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Arrays;
 import java.util.List;
-
+@Slf4j
 @Service
 public class SettleBalanceServiceImpl implements SettleBalanceService{
 
@@ -24,7 +26,7 @@ public class SettleBalanceServiceImpl implements SettleBalanceService{
     @Transactional
     public void settleBalanceFroGroup(SettleBalanceDTO settleBalanceDTO) {
 
-        UserGroupEntity userGroupEntity = userGroupRepository.getOne(settleBalanceDTO.getGroupID());
+        UserGroupEntity userGroupEntity = userGroupRepository.getOne(settleBalanceDTO.getGroupId());
 
         List<TransactionEntity> transactionEntityList = transactionRepository.findAllByUserGroupEntity(userGroupEntity);
 
