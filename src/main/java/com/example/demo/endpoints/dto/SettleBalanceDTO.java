@@ -8,5 +8,5 @@ import javax.validation.constraints.NotNull;
 public class SettleBalanceDTO {
     @NotNull
     @NotEmpty
-    private Long groupID;
+    private Long groupId;
 }
