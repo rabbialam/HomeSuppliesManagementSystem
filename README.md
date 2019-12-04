@@ -13,12 +13,13 @@ Project setup.</br>
   4. Download and configure Gradle. Run the command: "gradle wrapper"
   4. Connect to the database using mysql workbench and create a database called "demo_db" </br>
   5. Fetch the code from github. </br>
-  6. For opening the project in intilij , install it and run intilij. Then go to File>open and browse to the project folder downloaded
+  6. Open MySQL workbench. Make sure MySQL workbench is configured to run Update and Delete command. In order to do so, go to MySQL workbench -> preferences -> SQL Editor -> Untick Safe Update. Now MySQL workbench is ready to execute data.sql. Execute data.sql. This will populate data.
+  7. For opening the project in intilij , install it and run intilij. Then go to File>open and browse to the project folder downloaded
   from github and select build.gradle file. It will open the project. </br>
-  7. For running the project, open terminal or cmd and go to the project root folder. </br>
-  8. run "./gradlew bootrun" command. It will start the server at 9080 port. </br>
-  9. For building the jar file run "./gradlew clean build". It will build the jar file.</br>
-10. Start intilij , go to Settings>Plugin. Then search for "lombok" plugin and add it.
+  8. For running the project, open terminal or cmd and go to the project root folder. </br>
+  9. run "./gradlew bootrun" command. It will start the server at 9080 port. </br>
+  10. For building the jar file run "./gradlew clean build". It will build the jar file.</br>
+  11. Start intilij , go to Settings>Plugin. Then search for "lombok" plugin and add it.
   
 
 Developed features:
