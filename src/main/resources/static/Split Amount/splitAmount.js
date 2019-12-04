@@ -28,6 +28,8 @@ var obj = new Object();
         data: jsonString
     })
     .then(function(response) {
+           $scope.itemPrice=0;
+           $scope.itemNAme='Balance added .Want to add another??'
             // success
           ;
     },
