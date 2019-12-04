@@ -36,4 +36,4 @@ Developed features:
  
 
 
-**All Known Bugs **
+**All Known Bugs**
