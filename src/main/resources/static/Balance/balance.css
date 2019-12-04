@@ -50,6 +50,7 @@ body {
     padding : 8%;
     background: #2b303b;
     opacity: 0.5;
+     opacity: 1;
 }
 
 .item-table-column {
@@ -69,6 +70,7 @@ body {
     font-size: 14pt;
     /* padding-left: 50%;  */
     font-family: 'Roboto';
+    text-align: center;
 }
 
 .listItem:hover {
@@ -78,7 +80,7 @@ body {
 .item-table-row:hover{
     background: black;
     color: #2b303b;
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .listTable_div{

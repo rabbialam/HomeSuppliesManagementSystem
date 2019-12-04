@@ -1,9 +1,54 @@
 var app =angular.module('myApp',[]);
-app.controller('ItemsController',['$scope',function($scope){
+
+app.controller('balanceController',['$scope','$http',function($scope,$http){
     $scope.newItemName="";
     $scope.items=[];
     $scope.itemIndex=-1;
     $scope.isUpdateModal=false;
+    $scope.transactions=[];
+        $http({
+                    url: "http://localhost:9080/api/getUnsettledTransactions/1",
+                    method: "GET",
+                    headers: {'Content-Type':'application/json'}
+                })
+                .then(function(response) {
+                       $scope.transactions=response.data
+                        // success
+                      ;
+                },
+                function(response) { // optional
+                        // failed
+                        ;
+                });
+    /*$scope.getTransaction=function(){
+     var transactions = $http.get("http://localhost:9080/api/getUnsettledTransactions/1")
+     $scope.transactions=transactions;
+    }*/
+    $scope.groupId=1;
+    $scope.settleBalance=function(){
+
+        var obj = new Object();
+        obj.groupId = 1;
+        var jsonString= JSON.stringify(obj);
+
+         $http({
+                url: "http://localhost:9080/api/settleAmount",
+                method: "POST",
+                headers: {'Content-Type':'application/json'},
+                data: jsonString
+            })
+            .then(function(response) {
+                   $scope.itemPrice=0;
+                   $scope.itemNAme='Balance added .Want to add another??'
+                    // success
+                  ;
+            },
+            function(response) { // optional
+                    // failed
+                    ;
+            });
+    }
+
     var modal = document.getElementById('myModal');
     $scope.addItem = function (index,titleValue) {
         if($scope.newItemName != null || $scope.newItemName != ""){

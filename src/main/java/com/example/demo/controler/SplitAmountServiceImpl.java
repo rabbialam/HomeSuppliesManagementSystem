@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class SplitAmountServiceImpl implements SplitAmountService {
@@ -42,5 +43,13 @@ public class SplitAmountServiceImpl implements SplitAmountService {
         transactionRepository.save(transactionEntity);
         userRepository.save(user);
 
+    }
+
+    @Override
+    public List<TransactionEntity> getUnsettledTransactions(Long groupId) {
+        UserGroupEntity userGroupEntity = userGroupRepository.getOne(groupId);
+        List<TransactionEntity> transactionEntityList= transactionRepository.findAllByUserGroupEntityAndStatus(userGroupEntity, 1);
+
+        return transactionEntityList;
     }
 }

@@ -23,14 +23,14 @@ public class SettleBalanceEndpoint {
 
     @PostMapping
     @RequestMapping("/settleAmount")
-    Map<HttpStatus, List<String>> settleAmount(@RequestBody SettleBalanceDTO settleBalanceDTO){
+    List<String> settleAmount(@RequestBody SettleBalanceDTO settleBalanceDTO){
         Map<HttpStatus, List<String>> statusMap = new HashMap<>();
 
 
         List<String> settleTransactions = new ArrayList<>();
         settleTransactions = settleBalanceService.settleBalanceFroGroup(settleBalanceDTO);
         statusMap.put(HttpStatus.OK, settleTransactions);
-        return statusMap;
+        return settleTransactions;
 
     }
 }

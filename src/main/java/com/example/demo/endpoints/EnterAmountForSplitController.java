@@ -2,16 +2,16 @@ package com.example.demo.endpoints;
 
 import com.example.demo.controler.SplitAmountService;
 import com.example.demo.endpoints.dto.EnterAmountDTO;
+import com.example.demo.endpoints.dto.SettleBalanceDTO;
 import com.example.demo.endpoints.dto.UserGroupDto;
+import com.example.demo.entity.TransactionEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 @Slf4j
 @RestController()
@@ -30,5 +30,10 @@ public class EnterAmountForSplitController {
         statusMap.put(HttpStatus.OK, "Saved Item Successfully");
 
         return statusMap;
+    }
+
+    @GetMapping("/getUnsettledTransactions/{groupId}")
+    List<TransactionEntity> getUnsettledTransactions(@PathVariable("groupId") Long groupId){
+           return splitAmountService.getUnsettledTransactions(groupId);
     }
 }

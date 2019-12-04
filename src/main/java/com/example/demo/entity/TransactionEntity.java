@@ -9,15 +9,15 @@ import javax.persistence.*;
 public class TransactionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private Long transactionId;
 
     @Column
     private Double amount;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private  UserGroupEntity userGroupEntity;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private User paidBy;
 
     @Column
