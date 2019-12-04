@@ -1,6 +1,21 @@
 # HomeSuppliesManagementSystem
 
 **1. Manifest for the projects, all sub-modules and libraries**
+Front-end development includes the use of following technologies:
+  HyperText Markup Language
+  Cascading Style Sheets
+  ANGULAR JS
+  
+The required dependencies for the project are as follows:
+
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok:1.18.10'
+	annotationProcessor 'org.projectlombok:lombok:1.18.10'
+	compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+	compile("org.webjars:angularjs:1.6.9")
+	compile('org.webjars:bootstrap:3.3.7-1')
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.10.1'
 
 **2. Descriptions of the projects, all sub-modules and libraries**
 
