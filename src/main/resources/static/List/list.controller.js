@@ -1,23 +1,78 @@
 var app =angular.module('myApp',[]);
-app.controller('ItemsController',['$scope',function($scope){
+app.controller('ItemsController',['$scope','$http',function($scope,$http){
     $scope.newItemName="";
     $scope.items=[];
     $scope.itemIndex=-1;
     $scope.isUpdateModal=false;
+            $http({
+                        url: "http://localhost:9080//getItems?userName=aditi",
+                        method: "GET",
+                        headers: {'Content-Type':'application/json'}
+                    })
+                    .then(function(response) {
+                           $scope.items=response.data['OK']
+                            // success
+                          ;
+                    },
+                    function(response) { // optional
+                            // failed
+                            ;
+                    });
     var modal = document.getElementById('myModal');
     $scope.addItem = function (index,titleValue) {
         if($scope.newItemName != null || $scope.newItemName != ""){
-            $scope.items.push({
-                id: $scope.items.length + 1,
-                title: $scope.newItemName
-            });
-            $scope.newItemName="";
+            $scope.items.push($scope.newItemName);
+           var obj = new Object();
+           obj.userName = "Aditi";
+           obj.itemDescription  = $scope.newItemName;
+           var jsonString= JSON.stringify(obj);
+
             modal.style.display = "none";
+
+             $http({
+                                    url: "http://localhost:9080//addItem?userName=aditi",
+                                    method: "POST",
+                                    headers: {'Content-Type':'application/json'},
+                                    data: jsonString
+                                })
+                                .then(function(response) {
+
+                                        // success
+                                        $scope.newItemName="";
+                                      ;
+                                },
+                                function(response) { // optional
+                                        // failed
+                                        $scope.newItemName="";
+                                        ;
+                                });
         }
     }
 
     $scope.deleteItem = function (index) {
-        $scope.items.splice(index, 1);
+      var obj = new Object();
+               obj.userName = "Aditi";
+               obj.itemDescription  = $scope.items[index];
+               var jsonString= JSON.stringify(obj);
+
+                modal.style.display = "none";
+
+                 $http({
+                                        url: "http://localhost:9080//deleteItem?userName=aditi",
+                                        method: "POST",
+                                        headers: {'Content-Type':'application/json'},
+                                        data: jsonString
+                                    })
+                                    .then(function(response) {
+
+                                            // success
+                                         $scope.items.splice(index, 1);
+                                    },
+                                    function(response) { // optional
+                                            // failed
+                                            ;
+                                    });
+
     }
 
     $scope.openItem = function (index) {
