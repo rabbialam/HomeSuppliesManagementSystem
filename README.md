@@ -5,7 +5,8 @@ Project setup.</br>
     2. MySQL Communty server https://dev.mysql.com/downloads/mysql/ </br>
     3. MySQL workbench https://dev.mysql.com/downloads/workbench/ </br>
     4. Intilij community https://www.jetbrains.com/idea/download/ </br>
- Steps: </br>
+ </br>
+ Steps: 
   1. First download and install jdk </br>
   2. Download and install MySQL community server. While installing use the username: root and pass: root123456 (if You use 
   any other username and password you have to change it in application.properties file) </br>
