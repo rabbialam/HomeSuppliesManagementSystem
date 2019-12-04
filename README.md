@@ -1,5 +1,5 @@
 # HomeSuppliesManagementSystem
-Instructions to install, configure, and run the programs: </br>
+**Instructions to install, configure, and run the programs:** </br>
   Things that you need to download:</br>
     1. JDK https://www.oracle.com/technetwork/java/javase/downloads/index.html </br>
     2. MySQL Communty server https://dev.mysql.com/downloads/mysql/ </br>
