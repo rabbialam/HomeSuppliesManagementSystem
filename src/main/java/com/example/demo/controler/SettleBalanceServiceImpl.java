@@ -11,7 +11,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.SystemException;
 import javax.transaction.Transactional;
 import java.util.*;
 
@@ -30,15 +29,17 @@ public class SettleBalanceServiceImpl implements SettleBalanceService{
 
     @Override
     @Transactional
-    public void settleBalanceFroGroup(SettleBalanceDTO settleBalanceDTO) {
+    public List<String> settleBalanceFroGroup(SettleBalanceDTO settleBalanceDTO) {
 
         UserGroupEntity userGroupEntity = userGroupRepository.getOne(settleBalanceDTO.getGroupId());
-
+        List<String> settleTransactions = new ArrayList<>();
         List<TransactionEntity> transactionEntityList = transactionRepository.findAllByUserGroupEntityAndStatus(userGroupEntity, 1);
         Double amount = 0.0;
         int groupMember = (int) userGroupEntity.getUserList().stream().count();
         for (TransactionEntity transaction: transactionEntityList) {
             amount = amount + transaction.getAmount();
+            transaction.setStatus(0);
+            transactionRepository.save(transaction);
         }
         Double centralFund = amount / groupMember;
 
@@ -69,12 +70,14 @@ public class SettleBalanceServiceImpl implements SettleBalanceService{
                 }
             }
             sortedUserList.get(0).setBalance(sortedUserList.get(0).getBalance() + secondUser.getBalance());
+            settleTransactions.add(secondUser.getUserName()+ " will give "+ secondUser.getBalance() + " to "+ sortedUserList.get(0).getUserName());
             System.out.println(secondUser.getUserName()+ " will give "+ secondUser.getBalance() + " to "+ sortedUserList.get(0).getUserName());
             secondUser.setBalance(0.0);
 
             Collections.sort(sortedUserList, (first, second) -> (int) (first.getBalance() - second.getBalance()));
             //System.out.println("after iteration---->" +sortedUserList);
         }
+        return settleTransactions;
 
     }
 }

@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -21,11 +23,13 @@ public class SettleBalanceEndpoint {
 
     @PostMapping
     @RequestMapping("/settleAmount")
-    Map<HttpStatus, String> settleAmount(@RequestBody SettleBalanceDTO settleBalanceDTO){
-        Map<HttpStatus, String> statusMap = new HashMap<>();
+    Map<HttpStatus, List<String>> settleAmount(@RequestBody SettleBalanceDTO settleBalanceDTO){
+        Map<HttpStatus, List<String>> statusMap = new HashMap<>();
 
-        settleBalanceService.settleBalanceFroGroup(settleBalanceDTO);
-        statusMap.put(HttpStatus.OK, "Balance settle");
+
+        List<String> settleTransactions = new ArrayList<>();
+        settleTransactions = settleBalanceService.settleBalanceFroGroup(settleBalanceDTO);
+        statusMap.put(HttpStatus.OK, settleTransactions);
         return statusMap;
 
     }
