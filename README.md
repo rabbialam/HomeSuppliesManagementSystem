@@ -1,10 +1,10 @@
 # HomeSuppliesManagementSystem
 
-**Manifest for the projects, all sub-modules and libraries**
+**1. Manifest for the projects, all sub-modules and libraries**
 
-**Descriptions of the projects, all sub-modules and libraries**
+**2. Descriptions of the projects, all sub-modules and libraries**
 
-**Instructions to install, configure, and run the programs:** </br>
+**3. Instructions to install, configure, and run the programs:** </br>
   Things that you need to download:</br>
     1. JDK https://www.oracle.com/technetwork/java/javase/downloads/index.html </br>
     2. MySQL Communty server https://dev.mysql.com/downloads/mysql/ </br>
@@ -34,3 +34,6 @@ Developed features:
 3. Populate Shopping List
 4. Create or Edit Shopping List
  
+
+
+**All Known Bugs **
