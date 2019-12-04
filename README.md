@@ -1,4 +1,9 @@
 # HomeSuppliesManagementSystem
+
+**Manifest for the projects, all sub-modules and libraries**
+
+**Descriptions of the projects, all sub-modules and libraries**
+
 **Instructions to install, configure, and run the programs:** </br>
   Things that you need to download:</br>
     1. JDK https://www.oracle.com/technetwork/java/javase/downloads/index.html </br>
