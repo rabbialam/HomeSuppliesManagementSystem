@@ -5,7 +5,10 @@ app.controller('balanceController',['$scope','$http',function($scope,$http){
     $scope.items=[];
     $scope.itemIndex=-1;
     $scope.isUpdateModal=false;
+    $scope.result=false;
+    $scope.transaction=true;
     $scope.transactions=[];
+    $scope.settlement=[];
         $http({
                     url: "http://localhost:9080/api/getUnsettledTransactions/1",
                     method: "GET",
@@ -38,9 +41,11 @@ app.controller('balanceController',['$scope','$http',function($scope,$http){
                 data: jsonString
             })
             .then(function(response) {
-                   $scope.itemPrice=0;
-                   $scope.itemNAme='Balance added .Want to add another??'
+                   $scope.transactions=[];
                     // success
+                    $scope.transaction=false;
+                    $scope.result=true;
+                    $scope.settlement=response.data;
                   ;
             },
             function(response) { // optional

@@ -22,7 +22,7 @@
             </h1>
         </header>
         <div class="listTable_div">
-        <table border="1" class="item-table" >
+        <table border="1" class="item-table"  ng-show="transaction">
                 <!-- <tr class="item-table-row" ng-repeat="item in items" id="{{item.id}}"> -->
                         <tr class="item-table-row-header">
 
@@ -36,11 +36,31 @@
                     </tr>
             <tr class="item-table-row" ng-repeat="item in transactions" >
                 <td class="listItem">{{ item.amount }}</td>
-                <td class="listItem">{{ item.paidBy.userName }}</td>
+                <td class="listItem">{{ item.paidBy }}</td>
             </tr>
             <!-- <tr class="item-table-row" ng-repeat="item in items" id="{{item.id}}"> -->
 
         </table>
+
         </div>
+    <div class="listTable_div">
+        <table border="1" class="item-table" ng-show="result" >
+            <!-- <tr class="item-table-row" ng-repeat="item in items" id="{{item.id}}"> -->
+            <tr class="item-table-row-header">
+
+                <th class="item-table-column-header">
+                    Amount
+                </th>
+
+
+            </tr>
+            <tr class="item-table-row" ng-repeat="item in settlement" >
+                <td class="listItem">{{ item }}</td>
+            </tr>
+            <!-- <tr class="item-table-row" ng-repeat="item in items" id="{{item.id}}"> -->
+
+        </table>
+    </div>
+
     </body>
 </html>

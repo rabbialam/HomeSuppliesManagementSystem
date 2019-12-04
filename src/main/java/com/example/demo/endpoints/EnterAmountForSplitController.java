@@ -3,6 +3,7 @@ package com.example.demo.endpoints;
 import com.example.demo.controler.SplitAmountService;
 import com.example.demo.endpoints.dto.EnterAmountDTO;
 import com.example.demo.endpoints.dto.SettleBalanceDTO;
+import com.example.demo.endpoints.dto.TransactionDTo;
 import com.example.demo.endpoints.dto.UserGroupDto;
 import com.example.demo.entity.TransactionEntity;
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +34,7 @@ public class EnterAmountForSplitController {
     }
 
     @GetMapping("/getUnsettledTransactions/{groupId}")
-    List<TransactionEntity> getUnsettledTransactions(@PathVariable("groupId") Long groupId){
+    List<TransactionDTo> getUnsettledTransactions(@PathVariable("groupId") Long groupId){
            return splitAmountService.getUnsettledTransactions(groupId);
     }
 }

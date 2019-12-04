@@ -11,17 +11,21 @@ app.controller('ItemsController',['$scope','$http',function($scope,$http){
                     })
                     .then(function(response) {
                            $scope.items=response.data['OK']
+                           if($scope.items == null){
+                           $scope.items=[]
+                           }
                             // success
                           ;
                     },
                     function(response) { // optional
                             // failed
+                            $scope.items=[]
                             ;
                     });
     var modal = document.getElementById('myModal');
     $scope.addItem = function (index,titleValue) {
         if($scope.newItemName != null || $scope.newItemName != ""){
-            $scope.items.push($scope.newItemName);
+           $scope.items.push($scope.newItemName);
            var obj = new Object();
            obj.userName = "Aditi";
            obj.itemDescription  = $scope.newItemName;

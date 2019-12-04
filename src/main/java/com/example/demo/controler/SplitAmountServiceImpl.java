@@ -1,6 +1,7 @@
 package com.example.demo.controler;
 
 import com.example.demo.endpoints.dto.EnterAmountDTO;
+import com.example.demo.endpoints.dto.TransactionDTo;
 import com.example.demo.entity.TransactionEntity;
 import com.example.demo.entity.User;
 import com.example.demo.entity.UserGroupEntity;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -46,10 +48,19 @@ public class SplitAmountServiceImpl implements SplitAmountService {
     }
 
     @Override
-    public List<TransactionEntity> getUnsettledTransactions(Long groupId) {
+    public List<TransactionDTo> getUnsettledTransactions(Long groupId) {
         UserGroupEntity userGroupEntity = userGroupRepository.getOne(groupId);
         List<TransactionEntity> transactionEntityList= transactionRepository.findAllByUserGroupEntityAndStatus(userGroupEntity, 1);
 
-        return transactionEntityList;
+        List<TransactionDTo> transactionDToArrayList= new ArrayList<>();
+
+        for (TransactionEntity transactionEntity:transactionEntityList){
+            TransactionDTo transactionDTo = new TransactionDTo();
+            transactionDTo.setAmount(transactionEntity.getAmount());
+            transactionDTo.setPaidBy(transactionEntity.getPaidBy().getUserName());
+            transactionDToArrayList.add(transactionDTo);
+
+        }
+        return transactionDToArrayList;
     }
 }
