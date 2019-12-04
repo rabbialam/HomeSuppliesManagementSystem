@@ -1,3 +1,5 @@
+use demo_db;
+
 delete FROM demo_db.user_group_entity_user_list;
 delete FROM demo_db.user_user_group_entity_set;
 delete FROM demo_db.transaction_entity;
