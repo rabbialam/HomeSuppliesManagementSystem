@@ -59,3 +59,29 @@ Developed features:
 
 
 **4. All Known Bugs**
+
+1. Breadcrums not working : The breadcrums visible do not work (except for group list button on shopping list). The browser back button needs to be used for navigation between the pages. After navigation, the page needs to be refreshed for displaying updated content.
+
+2. Static users and user groups: The users and usergroups used in this application are static as we have not implemented those use cases. For usergroups too cannot be modified as the usecase is not selected for implementation. 
+
+3. Shopping list item update : Shopping list items can be added to the user shopping list and can be removed from it. However, the existing item entry cannot be modified from the front end. However backed functionality can be tested for this by using the following endpoint from postman tool (API not connected to front end):
+JSON FOR UPDATING ITEM OF USER SHOPPING LIST (PUT)  
+Example of Good request with no exception:
+localhost:9080//updateItem 
+{
+	"userName" : "aditiro",
+	"oldItemDescription" : "cake",  
+	"newItemDescription" : "frosting"
+}
+
+Bad request if: oldItemDescription not already present in the user shopping list
+		newItemDescription already present in user shopping list
+		oldItemDescription not specified 
+		newItemDescription not specified
+		user not specified 
+		user not found
+
+    NOTE: oldItemDescription: should be some item present in the checklist
+          newItemDescription: should be some item not present in the checklist
+
+4. No validations on input fields: If no amount is added in the split amount page and the add amount button is clicked, a payment of $0 is added to the users history in the group. Similarly, if no item is specified in the add item pop up, and the save button is clicked, an empty row will be visible in the front end, but the backend not save this item. When the page is refreshed, this empty row will be removed. 
