@@ -93,20 +93,21 @@ spring-boot-starter-data-jpa and spring-boot-starter-web: These libraries give f
   4. Download and configure Gradle. Run the command: "gradle wrapper"
   4. Connect to the database using mysql workbench and create a database called "demo_db" </br>
   5. Fetch the code from github. </br>
-  6. Open MySQL workbench. Make sure MySQL workbench is configured to run Update and Delete command. In order to do so, go to MySQL workbench -> preferences -> SQL Editor -> Untick Safe Update. Now MySQL workbench is ready to execute data.sql. Execute data.sql. This will populate data.
-  7. For opening the project in intilij , install it and run intilij. Then go to File>open and browse to the project folder downloaded
+  6. For opening the project in intilij , install it and run intilij. Then go to File>open and browse to the project folder downloaded
   from github and select build.gradle file. It will open the project. </br>
-  8. Start intilij , go to Settings>Plugin. Then search for "lombok" plugin and add it.
-  9. For running the project, open terminal or cmd and go to the project root folder. </br>
-  10. run "./gradlew bootrun" command. It will start the server at 9080 port. </br>
+  7. Start intilij , go to Settings>Plugin. Then search for "lombok" plugin and add it.
+  8. For running the project, open terminal or cmd and go to the project root folder. </br>
+  9. run "./gradlew bootrun" command. It will start the server at 9080 port. </br>
+  10. Open MySQL workbench. Make sure MySQL workbench is configured to run Update and Delete command. In order to do so, go to MySQL workbench -> preferences -> SQL Editor -> Untick Safe Update. Now MySQL workbench is ready to execute data.sql. Execute data.sql. This will populate data.
   11. For building the jar file run "./gradlew clean build". It will build the jar file.</br>
   12. The Jar file would be in build/lib folder.
  
  **Artifact exection and use instructions:**
  1. Prerequisit: Create the Schema as mentioned earlier. 
  2. Launch terminal and run command: java -jar demo-0.0.1-SNAPSHOT.jar (you will find the jar file in project home directory and in build/lib folder)
- 3. Launch browser and hit http://localhost:9080/Login/login.html
- 4. username: aditiro and password: aditiro
+ 3. Open MySQL workbench. Make sure MySQL workbench is configured to run Update and Delete command. In order to do so, go to MySQL workbench -> preferences -> SQL Editor -> Untick Safe Update. Now MySQL workbench is ready to execute data.sql. Execute data.sql. This will populate data.
+ 4. Launch browser and hit http://localhost:9080/Login/login.html
+ 5. username: aditiro and password: aditiro
 
 **Developed features:**
 1. Enter Amount for Split
