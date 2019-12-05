@@ -85,7 +85,7 @@ spring-boot-starter-data-jpa and spring-boot-starter-web: These libraries give f
     3. MySQL workbench https://dev.mysql.com/downloads/workbench/ </br>
     4. Intilij community https://www.jetbrains.com/idea/download/ </br>
  </br>
- Steps: 
+ **Steps:** 
   1. First download and install jdk 13</br>
   2. Download and install MySQL community server. While installing use the username: root and pass: root123456 (if You use 
   any other username and password you have to change it in application.properties file) </br>
@@ -102,18 +102,16 @@ spring-boot-starter-data-jpa and spring-boot-starter-web: These libraries give f
   11. For building the jar file run "./gradlew clean build". It will build the jar file.</br>
   12. The Jar file would be in build/lib folder.
  
- Artifact exection and use instructions:
+ **Artifact exection and use instructions:**
  1. Prerequisit: Create the Schema as mentioned earlier. 
  2. Launch terminal and run command: java -jar demo-0.0.1-SNAPSHOT.jar (you will find the jar file in project home directory and in build/lib folder)
  3. Launch browser and hit http://localhost:9080/Login/login.html
  4. username: aditiro and password: aditiro
 
-Developed features:
+**Developed features:**
 1. Enter Amount for Split
 2. Settle the balance
 3. Populate Shopping List
 4. Create or Edit Shopping List
  
-
-
 **4. All Known Bugs**
