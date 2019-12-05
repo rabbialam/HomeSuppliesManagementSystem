@@ -26,6 +26,61 @@ implementation 'org.springframework.boot:spring-boot-starter-data-jpa' </br>
 
 **2. Descriptions of the projects, all sub-modules and libraries**
 
+**2. Descriptions of the projects, all sub-modules and libraries**
+
+API documentation:
+Endpoint: localhost:9080//user?userName=johndoe [GET]
+Endpoint: localhost:9080//addItem [POST]
+Samples request-body: 
+{
+	"userName" : "johndoe",
+	"itemDescription" : "cake"
+}
+Endpoint: localhost:9080//addItem [POST]
+Samples request-body: 
+{
+	"userName" : "johndoe",
+	"itemDescription" : "cake"
+}
+
+Endpoint: localhost:9080//updateItem [POST]
+Samples request-body:
+{
+	"userName" : "johndoe",
+	"oldItemDescription" : "cake",
+	"newItemDescription" : "frosting"
+}
+Endpoint: localhost:9080//getItems?userName=johndoe [GET]
+
+Endpoint: localhost:9080//deleteItem [POST]
+Samples request-body:
+{
+	"userName" : "johndoe",
+	"itemDescription" : " frosting "
+}
+
+Endpoint: localhost:9080/api/enterAmount [POST]
+Samples request-body:
+{"amount": "10.0",
+"groupId" : "1",
+"paidBy" : "1"}
+
+Endpoint: localhost:9080/api/settleAmount [POST]
+Samples request-body:
+{"groupId" : 1}
+
+
+Endpoint: localhost:9080/api/getUnsettledTransactions/{groupId} [GET]
+
+
+Description of used libraries:
+lombok:1.18.10: It automatically generates getter, setters.
+angularjs:1.6.9 and bootstrap:3.3.7-1: This libraries help to develop frontend faster and easier
+jackson: This helps to map java objects to JSON and vice versa.
+slf4j: This library helps to do the loggings. 
+spring-boot-starter-data-jpa and spring-boot-starter-web: These libraries give functionality of spring-boot.
+
+
 **3. Instructions to install, configure, and run the programs:** </br>
   Things that you need to download:</br>
     1. JDK https://www.oracle.com/technetwork/java/javase/downloads/index.html </br>
