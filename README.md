@@ -28,46 +28,46 @@ implementation 'org.springframework.boot:spring-boot-starter-data-jpa' </br>
 
 API documentation:
 Endpoint: localhost:9080//user?userName=johndoe [GET]
-</br>Endpoint: localhost:9080//addItem [POST]
+</br>1. Endpoint: localhost:9080//addItem [POST]
 </br>Samples request-body: 
 </br>{
 </br>	"userName" : "johndoe",
 </br>	"itemDescription" : "cake"
 </br>}
-</br>Endpoint: localhost:9080//addItem [POST]
+</br>2. Endpoint: localhost:9080//addItem [POST]
 </br>Samples request-body: 
 </br>{
 </br>	"userName" : "johndoe",
 </br>	"itemDescription" : "cake"
 </br>}
 
-</br>Endpoint: localhost:9080//updateItem [POST]
+</br>3. Endpoint: localhost:9080//updateItem [POST]
 </br>Samples request-body:
 </br>{
 </br>	"userName" : "johndoe",
 </br>	"oldItemDescription" : "cake",
 </br>	"newItemDescription" : "frosting"
 </br>}
-</br>Endpoint: localhost:9080//getItems?userName=johndoe [GET]
+</br>4. Endpoint: localhost:9080//getItems?userName=johndoe [GET]
 
-</br>Endpoint: localhost:9080//deleteItem [POST]
+</br>5. Endpoint: localhost:9080//deleteItem [POST]
 </br>Samples request-body:
 </br>{
 </br>	"userName" : "johndoe",
 </br>	"itemDescription" : " frosting "
 </br>}
 
-</br>Endpoint: localhost:9080/api/enterAmount [POST]
+</br>6. Endpoint: localhost:9080/api/enterAmount [POST]
 </br>Samples request-body:
 </br>{"amount": "10.0",
 </br>"groupId" : "1",
 </br>"paidBy" : "1"}
 
-</br>Endpoint: localhost:9080/api/settleAmount [POST]
+</br>7. Endpoint: localhost:9080/api/settleAmount [POST]
 </br>Samples request-body:
 </br>{"groupId" : 1}
 
-</br>Endpoint: localhost:9080/api/getUnsettledTransactions/{groupId} [GET]
+</br>8. Endpoint: localhost:9080/api/getUnsettledTransactions/{groupId} [GET]
 
 
 Description of used libraries:
