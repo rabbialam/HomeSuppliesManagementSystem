@@ -26,8 +26,6 @@ implementation 'org.springframework.boot:spring-boot-starter-data-jpa' </br>
 
 **2. Descriptions of the projects, all sub-modules and libraries**
 
-**2. Descriptions of the projects, all sub-modules and libraries**
-
 API documentation:
 Endpoint: localhost:9080//user?userName=johndoe [GET]
 Endpoint: localhost:9080//addItem [POST]
