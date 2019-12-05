@@ -64,11 +64,10 @@ Endpoint: localhost:9080//user?userName=johndoe [GET]
 </br>"paidBy" : "1"}
 
 </br>Endpoint: localhost:9080/api/settleAmount [POST]
-Samples request-body:
-{"groupId" : 1}
+</br>Samples request-body:
+</br>{"groupId" : 1}
 
-
-Endpoint: localhost:9080/api/getUnsettledTransactions/{groupId} [GET]
+</br>Endpoint: localhost:9080/api/getUnsettledTransactions/{groupId} [GET]
 
 
 Description of used libraries:
