@@ -26,8 +26,8 @@ implementation 'org.springframework.boot:spring-boot-starter-data-jpa' </br>
 
 **2. Descriptions of the projects, all sub-modules and libraries**
 
-API documentation:
-Endpoint: localhost:9080//user?userName=johndoe [GET]
+**API documentation:**
+</br>Endpoint: localhost:9080//user?userName=johndoe [GET]
 </br>1. Endpoint: localhost:9080//addItem [POST]
 </br>Samples request-body: 
 </br>{
@@ -70,7 +70,7 @@ Endpoint: localhost:9080//user?userName=johndoe [GET]
 </br>8. Endpoint: localhost:9080/api/getUnsettledTransactions/{groupId} [GET]
 
 
-Description of used libraries:
+**Description of used libraries:** </br>
 lombok:1.18.10: It automatically generates getter, setters.
 angularjs:1.6.9 and bootstrap:3.3.7-1: This libraries help to develop frontend faster and easier
 jackson: This helps to map java objects to JSON and vice versa.
