@@ -28,42 +28,42 @@ implementation 'org.springframework.boot:spring-boot-starter-data-jpa' </br>
 
 API documentation:
 Endpoint: localhost:9080//user?userName=johndoe [GET]
-Endpoint: localhost:9080//addItem [POST]
-Samples request-body: 
-{
-	"userName" : "johndoe",
-	"itemDescription" : "cake"
-}
-Endpoint: localhost:9080//addItem [POST]
-Samples request-body: 
-{
-	"userName" : "johndoe",
-	"itemDescription" : "cake"
-}
+</br>Endpoint: localhost:9080//addItem [POST]
+</br>Samples request-body: 
+</br>{
+</br>	"userName" : "johndoe",
+</br>	"itemDescription" : "cake"
+</br>}
+</br>Endpoint: localhost:9080//addItem [POST]
+</br>Samples request-body: 
+</br>{
+</br>	"userName" : "johndoe",
+</br>	"itemDescription" : "cake"
+</br>}
 
-Endpoint: localhost:9080//updateItem [POST]
-Samples request-body:
-{
-	"userName" : "johndoe",
-	"oldItemDescription" : "cake",
-	"newItemDescription" : "frosting"
-}
-Endpoint: localhost:9080//getItems?userName=johndoe [GET]
+</br>Endpoint: localhost:9080//updateItem [POST]
+</br>Samples request-body:
+</br>{
+</br>	"userName" : "johndoe",
+</br>	"oldItemDescription" : "cake",
+</br>	"newItemDescription" : "frosting"
+</br>}
+</br>Endpoint: localhost:9080//getItems?userName=johndoe [GET]
 
-Endpoint: localhost:9080//deleteItem [POST]
-Samples request-body:
-{
-	"userName" : "johndoe",
-	"itemDescription" : " frosting "
-}
+</br>Endpoint: localhost:9080//deleteItem [POST]
+</br>Samples request-body:
+</br>{
+</br>	"userName" : "johndoe",
+</br>	"itemDescription" : " frosting "
+</br>}
 
-Endpoint: localhost:9080/api/enterAmount [POST]
-Samples request-body:
-{"amount": "10.0",
-"groupId" : "1",
-"paidBy" : "1"}
+</br>Endpoint: localhost:9080/api/enterAmount [POST]
+</br>Samples request-body:
+</br>{"amount": "10.0",
+</br>"groupId" : "1",
+</br>"paidBy" : "1"}
 
-Endpoint: localhost:9080/api/settleAmount [POST]
+</br>Endpoint: localhost:9080/api/settleAmount [POST]
 Samples request-body:
 {"groupId" : 1}
 
