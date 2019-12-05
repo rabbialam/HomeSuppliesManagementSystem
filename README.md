@@ -7,14 +7,15 @@ Front-end development includes the use of following technologies: </br>
   3. ANGULAR JS </br>
   
 The required dependencies for the project are as follows: </br>
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa' </br>
-	implementation 'org.springframework.boot:spring-boot-starter-web' </br>
-	compileOnly 'org.projectlombok:lombok:1.18.10' </br>
-	annotationProcessor 'org.projectlombok:lombok:1.18.10' </br>
-	compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25' </br>
-	compile("org.webjars:angularjs:1.6.9") </br>
-	compile('org.webjars:bootstrap:3.3.7-1') </br>
-	compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.10.1' </br>
+
+implementation 'org.springframework.boot:spring-boot-starter-data-jpa' </br>
+implementation 'org.springframework.boot:spring-boot-starter-web' </br>
+compileOnly 'org.projectlombok:lombok:1.18.10' </br>
+annotationProcessor 'org.projectlombok:lombok:1.18.10' </br>
+compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25' </br>
+compile("org.webjars:angularjs:1.6.9") </br>
+compile('org.webjars:bootstrap:3.3.7-1') </br>
+compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.10.1' </br>
   	
 
 **2. Descriptions of the projects, all sub-modules and libraries**
