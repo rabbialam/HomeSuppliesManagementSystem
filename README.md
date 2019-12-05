@@ -7,12 +7,12 @@ Created-By : SSDI Group-2 </br>
 Package-Name : demo </br>
 Main-Class: DemoApplication.java </br>
 
-###### Front-end development includes the use of following technologies: </br>
+ Front-end development includes the use of following technologies: </br>
   1. HyperText Markup Language </br>
   2. Cascading Style Sheets </br>
   3. ANGULAR JS </br>
   
-###### The required dependencies for the project are as follows: </br>
+ The required dependencies for the project are as follows: </br>
 
 implementation 'org.springframework.boot:spring-boot-starter-data-jpa' </br>
 	implementation 'org.springframework.boot:spring-boot-starter-web' </br>
